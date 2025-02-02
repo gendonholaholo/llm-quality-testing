@@ -1,0 +1,185 @@
+[
+  { "text": "This is a sample sentence for testing.", "label": "class_1" },
+  {
+    "text": "Another example sentence for classification purposes.",
+    "label": "class_2"
+  },
+  {
+    "text": "How do you handle ambiguous statements in a test?",
+    "label": "class_3"
+  },
+  {
+    "text": "This is a complex sentence that tests your model's performance.",
+    "label": "class_1"
+  },
+  {
+    "text": "What is the difference between supervised and unsupervised learning?",
+    "label": "class_3"
+  },
+  { "text": "A short sentence.", "label": "class_2" },
+  { "text": "The car moved swiftly through the rain.", "label": "class_4" },
+  {
+    "text": "Can you generate a meaningful response for this query?",
+    "label": "class_3"
+  },
+  {
+    "text": "This is an example with different phrasing, does it work?",
+    "label": "class_1"
+  },
+  {
+    "text": "Generating accurate results from machine learning models is essential.",
+    "label": "class_4"
+  },
+  {
+    "text": "Classifiers need to be trained properly to handle edge cases.",
+    "label": "class_5"
+  },
+  {
+    "text": "When was the last time you faced a challenge with NLP tasks?",
+    "label": "class_5"
+  },
+  {
+    "text": "This sentence includes some advanced concepts of NLP and machine learning.",
+    "label": "class_6"
+  },
+  {
+    "text": "Paraphrasing is an important aspect of natural language understanding.",
+    "label": "class_1"
+  },
+  {
+    "text": "Neural networks have achieved great success in various tasks.",
+    "label": "class_6"
+  },
+  {
+    "text": "The quick brown fox jumped over the lazy dog.",
+    "label": "class_4"
+  },
+  {
+    "text": "Artificial intelligence is revolutionizing industries worldwide.",
+    "label": "class_2"
+  },
+  {
+    "text": "Text classification is a popular problem in natural language processing.",
+    "label": "class_5"
+  },
+  {
+    "text": "Data science techniques are applied in almost every domain today.",
+    "label": "class_4"
+  },
+
+  { "text": "Ini adalah kalimat contoh untuk pengujian.", "label": "class_1" },
+  {
+    "text": "Contoh lain kalimat untuk tujuan klasifikasi.",
+    "label": "class_2"
+  },
+  {
+    "text": "Bagaimana cara model ini menangani pernyataan ambigu?",
+    "label": "class_3"
+  },
+  {
+    "text": "Kalimat ini cukup kompleks untuk menguji kinerja model Anda.",
+    "label": "class_1"
+  },
+  {
+    "text": "Apa perbedaan antara pembelajaran terawasi dan tidak terawasi?",
+    "label": "class_3"
+  },
+  { "text": "Sebuah kalimat pendek.", "label": "class_2" },
+  { "text": "Mobil itu bergerak cepat melewati hujan.", "label": "class_4" },
+  {
+    "text": "Dapatkah Anda menghasilkan respons yang bermakna untuk pertanyaan ini?",
+    "label": "class_3"
+  },
+  {
+    "text": "Ini adalah contoh dengan pengungkapan yang berbeda, apakah berhasil?",
+    "label": "class_1"
+  },
+  {
+    "text": "Menghasilkan hasil yang akurat dari model pembelajaran mesin itu penting.",
+    "label": "class_4"
+  },
+  {
+    "text": "Pemisah perlu dilatih dengan baik agar dapat menangani kasus batas.",
+    "label": "class_5"
+  },
+  {
+    "text": "Kapan terakhir kali Anda menghadapi tantangan dengan tugas NLP?",
+    "label": "class_5"
+  },
+  {
+    "text": "Kalimat ini mencakup beberapa konsep canggih dalam NLP dan pembelajaran mesin.",
+    "label": "class_6"
+  },
+  {
+    "text": "Para frasa adalah aspek penting dalam pemahaman bahasa alami.",
+    "label": "class_1"
+  },
+  {
+    "text": "Jaringan saraf telah mencapai kesuksesan besar dalam berbagai tugas.",
+    "label": "class_6"
+  },
+  {
+    "text": "Rubah coklat yang cepat melompat di atas anjing yang malas.",
+    "label": "class_4"
+  },
+  {
+    "text": "Kecerdasan buatan sedang merevolusi industri di seluruh dunia.",
+    "label": "class_2"
+  },
+  {
+    "text": "Klasifikasi teks adalah masalah populer dalam pemrosesan bahasa alami.",
+    "label": "class_5"
+  },
+  {
+    "text": "Teknik ilmu data diterapkan di hampir setiap domain saat ini.",
+    "label": "class_4"
+  },
+  {
+    "text": "Pelanggaran privasi dalam penggunaan AI semakin menjadi perhatian global.",
+    "label": "class_7"
+  },
+  {
+    "text": "Membangun model AI yang dapat memahami konteks percakapan sangat menantang.",
+    "label": "class_7"
+  },
+  {
+    "text": "Berbagai pendekatan dalam deep learning digunakan untuk meningkatkan performa model.",
+    "label": "class_8"
+  },
+  {
+    "text": "Tantangan dalam pemrosesan bahasa alami sering kali berkaitan dengan ambiguitas.",
+    "label": "class_3"
+  },
+  {
+    "text": "Sebagian besar teknik pembelajaran mendalam membutuhkan data pelatihan yang sangat besar.",
+    "label": "class_8"
+  },
+  {
+    "text": "Algoritma pembelajaran mesin harus mampu menangani data yang tidak terstruktur.",
+    "label": "class_6"
+  },
+  {
+    "text": "Diperlukan waktu lama untuk melatih model yang akurat dalam pengenalan gambar.",
+    "label": "class_9"
+  },
+  {
+    "text": "Kecerdasan buatan dapat mengubah cara kita bekerja dan berinteraksi dengan teknologi.",
+    "label": "class_2"
+  },
+  {
+    "text": "Memprediksi hasil pertandingan olahraga menggunakan pembelajaran mesin semakin populer.",
+    "label": "class_9"
+  },
+  {
+    "text": "Model bahasa besar seperti GPT dapat menghasilkan teks yang sangat alami.",
+    "label": "class_10"
+  },
+  {
+    "text": "Pemrograman berorientasi objek adalah paradigma penting dalam pengembangan perangkat lunak.",
+    "label": "class_10"
+  },
+  {
+    "text": "Pengolahan citra digital memerlukan pemahaman mendalam tentang algoritma matematika.",
+    "label": "class_6"
+  }
+]
