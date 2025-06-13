@@ -1,6 +1,10 @@
 models:
-  - gpt2
-  - facebook/bart-large-cnn
+  - name: gpt2
+    task_type: causal_lm
+    metrics: [perplexity]
+  - name: facebook/bart-large-cnn
+    task_type: seq2seq
+    metrics: [bleu]
 dataset: data/sample_data.json
 output_csv: results/leaderboard.csv
 output_json: results/leaderboard.json 

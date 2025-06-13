@@ -65,3 +65,24 @@ def evaluate_bleu(model, tokenizer, dataset):
     bleu_score = float(corpus_bleu(reference_tokens, generated_tokens))
     return bleu_score
 
+
+# Modular evaluation entry points
+
+def run_causal_lm_evaluation(model, tokenizer, dataset, metrics):
+    results = {}
+    if 'perplexity' in metrics:
+        results['perplexity'] = evaluate_perplexity(model, tokenizer, dataset[0]['text'])
+    return results
+
+def run_seq2seq_evaluation(model, tokenizer, dataset, metrics):
+    results = {}
+    if 'bleu' in metrics:
+        results['bleu'] = evaluate_bleu(model, tokenizer, dataset)
+    return results
+
+def run_zero_shot_classification_evaluation(model_name, dataset, metrics):
+    results = {}
+    if 'accuracy' in metrics:
+        results['accuracy'] = evaluate_accuracy(model_name, dataset)
+    return results
+
