@@ -1,0 +1,6 @@
+models:
+  - gpt2
+  - facebook/bart-large-cnn
+dataset: data/sample_data.json
+output_csv: results/leaderboard.csv
+output_json: results/leaderboard.json 
