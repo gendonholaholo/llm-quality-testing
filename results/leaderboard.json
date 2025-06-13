@@ -1,0 +1,14 @@
+[
+  {
+    "model_name": "gpt2",
+    "perplexity": 121.0995,
+    "accuracy": 0.04,
+    "bleu": "N/A"
+  },
+  {
+    "model_name": "facebook/bart-large-cnn",
+    "perplexity": 53375680.0,
+    "accuracy": 0.02,
+    "bleu": 0.0
+  }
+]

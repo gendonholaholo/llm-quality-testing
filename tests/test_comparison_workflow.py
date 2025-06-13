@@ -28,7 +28,7 @@ def test_comparative_leaderboard_workflow(tmp_path, monkeypatch):
     monkeypatch.setattr(compare_models, 'evaluate_bleu', lambda m, t, d: 0.5)
     # Jalankan main
     with patch('builtins.print'):
-        compare_models.main()
+        compare_models.main(['evaluate', str(tmp_path / 'dummy_config.yaml')])
     # Cek file output
     assert os.path.exists(config['output_csv'])
     assert os.path.exists(config['output_json'])

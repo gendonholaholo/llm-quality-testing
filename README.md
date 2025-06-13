@@ -1,17 +1,24 @@
 # llm-quality-testing
 
-## Tujuan Proyek
-Alat CLI untuk membandingkan kualitas beberapa model LLM (Hugging Face) pada dataset yang sama menggunakan metrik perplexity, accuracy, dan BLEU. Hasil dapat dilihat langsung di terminal (tabel) dan disimpan ke file (CSV/JSON) untuk dokumentasi dan analisis lebih lanjut.
+[![PyPI version](https://img.shields.io/pypi/v/llm-quality-testing.svg?style=flat)](https://pypi.org/project/llm-quality-testing/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Instalasi
-1. Pastikan Python 3.8+ sudah terpasang.
-2. Install dependensi:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Project Purpose
+A CLI tool to compare the quality of multiple LLMs (Hugging Face) on the same dataset using perplexity, accuracy, and BLEU metrics. Results are displayed in the terminal (table) and can be saved to file (CSV/JSON) for documentation and further analysis.
 
-## Struktur Konfigurasi YAML
-Contoh file: `configs/default_config.yaml`
+## Installation
+
+### From Local Repository
+```bash
+pip install .
+```
+
+### From PyPI (after publishing)
+```bash
+pip install llm-quality-testing
+```
+
+## YAML Configuration Structure
+Example file: `configs/default_config.yaml`
 ```yaml
 models:
   - gpt2
@@ -20,18 +27,29 @@ dataset: data/sample_data.json
 output_csv: results/leaderboard.csv
 output_json: results/leaderboard.json
 ```
-- `models`: Daftar nama model Hugging Face yang akan dibandingkan.
-- `dataset`: Path ke file data uji (format JSON, list of {"text", "label"}).
-- `output_csv`: Path file output hasil leaderboard (CSV).
-- `output_json`: Path file output hasil leaderboard (JSON).
+- `models`: List of Hugging Face model names to compare.
+- `dataset`: Path to test data file (JSON, list of {"text", "label"}).
+- `output_csv`: Output leaderboard file path (CSV).
+- `output_json`: Output leaderboard file path (JSON).
 
-## Menjalankan Perbandingan Model
-Jalankan perintah berikut dari root project:
+## Usage
+
+### Run with YAML config
 ```bash
-python scripts/compare_models.py
+llm-tester evaluate configs/default_config.yaml
 ```
 
-## Contoh Output di Terminal
+### Override config values from CLI
+```bash
+llm-tester evaluate configs/default_config.yaml \
+  --model-name gpt2 --model-name facebook/bart-large-cnn \
+  --dataset-path data/sample_data.json \
+  --output-csv results/leaderboard.csv \
+  --output-json results/leaderboard.json \
+  --metrics perplexity --metrics accuracy
+```
+
+### Example Output in Terminal
 ```
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃                Comparative Model Leaderboard     ┃
@@ -45,29 +63,40 @@ python scripts/compare_models.py
 Leaderboard saved to: results/leaderboard.csv and results/leaderboard.json
 ```
 
-## Hasil File Output
-- `results/leaderboard.csv`: Tabel hasil perbandingan dalam format CSV.
-- `results/leaderboard.json`: Hasil yang sama dalam format JSON.
+## Output Files
+- `results/leaderboard.csv`: Comparison results in CSV format.
+- `results/leaderboard.json`: Same results in JSON format.
+
+## Demo
+
+[Demo GIF akan ditambahkan di sini]
+
+## Contributing
+
+Contributions are welcome! To contribute:
+- Fork this repository and create a new branch for your feature or bugfix.
+- Make your changes and add tests as needed.
+- Submit a pull request describing your changes.
 
 ## Testing
-Jalankan seluruh tes dengan:
+Run all tests with:
 ```bash
 pytest
 ```
 
-## Struktur Proyek
+## Project Structure
 ```
 llm-quality-testing/
-├── llm_eval/          # Kode utama evaluasi
-├── scripts/           # Script CLI
+├── llm_eval/          # Core evaluation code
+├── scripts/           # CLI scripts
 ├── tests/             # Unit & integration tests
-├── configs/           # File konfigurasi YAML
-├── results/           # Output leaderboard
-├── requirements.txt
+├── configs/           # YAML config files
+├── results/           # Leaderboard output
+├── pyproject.toml
 └── README.md
 ```
 
-## Catatan
-- Untuk model besar, pastikan resource (RAM/GPU) cukup.
-- Untuk menambah model, cukup edit file YAML konfigurasi.
-- Untuk memperluas ke custom loader, paralelisasi, atau API, struktur sudah siap untuk dikembangkan lebih lanjut.
+## Notes
+- For large models, ensure sufficient resources (RAM/GPU).
+- To add models, simply edit the YAML config file.
+- The structure is ready for further extension (custom loader, parallelization, API, etc).

@@ -1,0 +1,25 @@
+[project]
+name = "llm-quality-testing"
+version = "0.1.0"
+description = "CLI tool for evaluating and comparing LLM quality using Hugging Face models."
+authors = [
+    { name = "Gendon Holaholo" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "transformers==4.51.3",
+    "torch==2.7.0",
+    "scikit-learn==1.6.1",
+    "nltk==3.9.1",
+    "pyyaml==6.0.2",
+    "rich==14.0.0",
+    "click"
+]
+
+[project.scripts]
+llm-tester = "scripts.compare_models:main"
+
+[tool.setuptools.packages.find]
+include = ["llm_eval*", "scripts*"]
+exclude = ["data*", "results*", "configs*"] 
