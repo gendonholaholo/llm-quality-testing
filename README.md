@@ -33,8 +33,8 @@ python scripts/compare_models.py
 
 ## Contoh Output di Terminal
 ```
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃                Comparative Model Leaderboard                ┃
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                Comparative Model Leaderboard     ┃
 ┡━━━━━━━━━━━━━━━┯━━━━━━━━━━━━┯━━━━━━━━━━┯━━━━━━━━━━┩
 │ model_name    │ perplexity │ accuracy │ bleu     │
 ├───────────────┼────────────┼──────────┼──────────┤
