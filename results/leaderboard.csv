@@ -1,3 +1,3 @@
-model_name,perplexity,accuracy,bleu
-gpt2,121.0995,0.04,N/A
-facebook/bart-large-cnn,53375680.0,0.02,0.0
+task_type,model_name,bleu,perplexity
+causal_lm,gpt2,,121.09947204589844
+seq2seq,facebook/bart-large-cnn,4.900608192873829e-232,

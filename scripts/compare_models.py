@@ -92,6 +92,8 @@ def evaluate(config_path):
     output_json = config['output_json']
     dataset = load_sample_data(dataset_path)
     results = []
+    print(f"[INFO] Loaded config from {config_path}")
+    print(f"[INFO] Loaded dataset from {dataset_path} with {len(dataset)} samples")
     for model_cfg in models:
         if isinstance(model_cfg, str):
             model_name = model_cfg
@@ -100,12 +102,12 @@ def evaluate(config_path):
         elif isinstance(model_cfg, dict):
             model_name = model_cfg.get('name')
             if not isinstance(model_name, str):
-                print(f"[ERROR] Field 'name' pada model config harus string. Lewati: {model_cfg}")
+                print(f"[ERROR] Field 'name' in model config must be a string. Skipping: {model_cfg}")
                 continue
             task_type = model_cfg.get('task_type')
             metrics = model_cfg.get('metrics', [])
         else:
-            print(f"[ERROR] Format model config tidak dikenali: {model_cfg}")
+            print(f"[ERROR] Unrecognized model config format: {model_cfg}")
             continue
         # Auto-detect architecture if not specified
         if not task_type:
@@ -121,20 +123,21 @@ def evaluate(config_path):
                 else:
                     task_type = 'causal_lm'  # Default fallback
             except Exception as e:
-                print(f"[ERROR] Gagal mendeteksi arsitektur model '{model_name}': {e}")
+                print(f"[ERROR] Failed to detect model architecture for '{model_name}': {e}")
                 continue
         row = {'model_name': model_name, 'task_type': task_type}
+        print(f"[INFO] Starting evaluation for model: {model_name} (task: {task_type})")
         if task_type == 'causal_lm':
             model, tokenizer = load_model_and_tokenizer(model_name, 'causal_lm')
             if model is None or tokenizer is None:
-                row['error'] = 'Gagal memuat model/tokenizer.'
+                row['error'] = 'Failed to load model/tokenizer.'
             else:
                 eval_results = run_causal_lm_evaluation(model, tokenizer, dataset, metrics)
                 row.update(eval_results)
         elif task_type == 'seq2seq':
             model, tokenizer = load_model_and_tokenizer(model_name, 'seq2seq')
             if model is None or tokenizer is None:
-                row['error'] = 'Gagal memuat model/tokenizer.'
+                row['error'] = 'Failed to load model/tokenizer.'
             else:
                 eval_results = run_seq2seq_evaluation(model, tokenizer, dataset, metrics)
                 row.update(eval_results)
@@ -143,8 +146,11 @@ def evaluate(config_path):
             row.update(eval_results)
         else:
             row['error'] = f'Unknown task_type: {task_type}'
+        print(f"[INFO] Finished evaluation for model: {model_name}")
         results.append(row)
+    print("[INFO] Printing leaderboard...")
     print_leaderboard(results)
+    print(f"[INFO] Saving results to {output_csv} and {output_json}")
     save_csv(results, output_csv)
     save_json(results, output_json)
     print(f"\nLeaderboard saved to: {output_csv} and {output_json}")

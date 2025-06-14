@@ -1,14 +1,12 @@
 [
   {
     "model_name": "gpt2",
-    "perplexity": 121.0995,
-    "accuracy": 0.04,
-    "bleu": "N/A"
+    "task_type": "causal_lm",
+    "perplexity": 121.09947204589844
   },
   {
     "model_name": "facebook/bart-large-cnn",
-    "perplexity": 53375680.0,
-    "accuracy": 0.02,
-    "bleu": 0.0
+    "task_type": "seq2seq",
+    "bleu": 4.900608192873829e-232
   }
 ]
